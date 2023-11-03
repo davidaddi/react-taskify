@@ -1,0 +1,130 @@
+/* Form component */
+.taskForm button {
+  background-color: #f3f3f3;
+  color: #b9b9b9;
+  width: 150px;
+  height: 30px;
+  font-size: 13px;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.errorText {
+  color: red;
+  font-size: 12px; 
+  margin-top: 5px; 
+}
+
+.errorContainer {
+  text-align: center;
+  margin-top: 10px; 
+}
+
+.taskForm button:hover {
+  cursor: pointer;
+  background-color: #f2f2f2;
+  transition: background-color 0.3s;
+}
+
+.taskForm input, 
+.taskForm input:focus
+.taskForm input:active {
+  border: none;
+  outline: none;
+  height: 30px;
+  font-weight: 400;
+  border-bottom: 1px solid black;
+  margin-right: 30px;
+  width: 300px;
+}
+
+.taskForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Reicept */
+
+.receipt {
+  margin: auto;
+  margin-top: 60px;
+  width: 370px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('wrinkled-paper-texture.jpg');
+  background-repeat: repeat-y;
+  background-size: auto;
+  filter: brightness(101%);
+  padding: 0 15px;
+}
+
+.receiptHeader {
+  text-align: center;
+  margin-top: 20px;
+}
+
+input[type="checkbox"] {
+  accent-color: #000000;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 50px;
+}
+
+.ticket-container {
+  padding: 10px 20px; 
+  margin: 20px;
+  width: 100%; 
+}
+
+.ticket-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead,
+tfoot {
+  border-bottom: 1px dashed #000;
+  border-top: 1px dashed #000;
+  text-align: left;
+}
+
+.column-header,
+.column-footer {
+  font-weight: bold;
+  padding: 8px;
+  border: none;
+  width: 15%;
+}
+
+.column-footer-lg {
+  text-align: right;
+}
+
+.column-footer:first-child {
+  text-align: center;
+}
+
+.long-column {
+  width: 50%;
+}
+
+td {
+  padding: 8px;
+  border: none;
+  text-align: left;
+}
+
+td:last-child,
+td:first-child,
+.column-header:last-child,
+.column-header:first-child {
+  text-align: center;
+}
