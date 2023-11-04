@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Form from './components/Form';
 import Header from './components/Header';
 import './App.css';
@@ -20,6 +20,7 @@ function Receipt({ tasks }) {
     <div className="receipt">
       <ReceiptHeader />
       <TaskList tasks={tasks} />
+      <ReceiptFooter />
     </div>
   );
 }
@@ -57,29 +58,17 @@ function TaskTableBody({ tasks }) {
 }
 
 function TaskTableFooter({ tasks }) {
-  const [completedTasksCount, setCompletedTasksCount] = useState(0); 
-
-  const totalTasks = tasks.length;
-
-  useEffect(() => {
-    const completedTasks = tasks.filter((task) => task.completed);
-    setCompletedTasksCount(completedTasks.length);
-  }, [tasks]);
+  const taskCount = tasks.length; 
 
   return (
     <tfoot>
       <tr>
         <th className="column-footer">TOTAL</th>
-        <th colSpan="2" className="column-footer column-footer-lg">{totalTasks}</th>
-      </tr>
-      <tr>
-        <th className="column-footer">DONE</th>
-        <th colSpan="2" className="column-footer column-footer-lg">{completedTasksCount}</th>
+        <th colSpan="2" className="column-footer column-footer-lg">{taskCount}</th>
       </tr>
     </tfoot>
   );
 }
-
 
 
 function TaskList({ tasks }) {
@@ -94,6 +83,7 @@ function TaskList({ tasks }) {
   );
 }
 
+
 function Task({ id, name, completed: initialCompleted }) {
   const [completed, setCompleted] = useState(initialCompleted);
 
@@ -101,15 +91,33 @@ function Task({ id, name, completed: initialCompleted }) {
     setCompleted(e.target.checked);
   }
 
+
   return (
     <tr>
-      <td style={{ textDecoration: completed ? 'line-through' : 'none' }}>{id}</td>
-      <td className="item-name" style={{ textDecoration: completed ? 'line-through' : 'none' }}>{name}</td>
+      <td style={{textDecoration: completed ? 'line-through' : 'none'}}>{id}</td>
+      <td className="item-name" style={{textDecoration: completed ? 'line-through' : 'none'}}>{name}</td>
       <td>
         <input type="checkbox" checked={completed} onChange={handleCheckboxChange} />
       </td>
     </tr>
   );
+}
+
+function ReceiptFooter() {
+  const code = Math.floor(10000 + Math.random() * 90000);
+
+  return (
+    <>
+      <div className="codes">
+        <h4>CARD NUM : **** **** **** 1881</h4>
+        <h4>TRANSACTION CODE : {code}</h4>
+      </div>
+      <div className="receiptFooter">
+          <h4>THANKS FOR YOUR VISIT</h4>
+          <img src="./barcode.png" alt="" />
+      </div>
+    </>
+  )
 }
 
 export default App;
