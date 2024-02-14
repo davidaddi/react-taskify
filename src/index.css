@@ -56,7 +56,11 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+<<<<<<< HEAD
   background-image: url("../public/wrinkled-paper-texture.jpg");
+=======
+  background-image: url('wrinkled-paper-texture.jpg');
+>>>>>>> parent of 5606716 (fix background not displaying)
   background-repeat: repeat-y;
   background-size: auto;
   filter: brightness(101%);
